@@ -1,0 +1,7 @@
+﻿<a href="/NhaXuatBan/SachTheoNXB">Nhà xuất bản</a><a data-toggle="dropdown"><b class="caret" style="color:#2a80b9"></b></a>
+<ul class="dropdown-menu">
+    @foreach (var item in Model)
+    {
+        <li><a href="/NhaXuatBan/SachThuocNXB?id=@item.MaNXB">@item.TenNXB</a></li>
+    }
+</ul>

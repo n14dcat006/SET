@@ -1,0 +1,174 @@
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\ApplicationInsights.config
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\roslyn\csc.exe
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\roslyn\System.Collections.Immutable.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\roslyn\System.Reflection.Metadata.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\roslyn\vbc.exe
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\roslyn\VBCSCompiler.exe
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\roslyn\VBCSCompiler.exe.config
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\WebsiteBanSach.dll.config
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\WebsiteBanSach.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\WebsiteBanSach.pdb
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Antlr3.Runtime.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\EntityFramework.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\EntityFramework.SqlServer.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.Agent.Intercept.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.DependencyCollector.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.Web.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.WindowsServer.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.ApplicationInsights.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AspNet.Identity.Core.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Cookies.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Facebook.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Google.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.OAuth.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Twitter.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Web.Infrastructure.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Newtonsoft.Json.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Owin.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Helpers.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Mvc.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Optimization.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Razor.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.WebPages.Deployment.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.WebPages.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.WebPages.Razor.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\WebGrease.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.DependencyCollector.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.Web.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.WindowsServer.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.ApplicationInsights.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Helpers.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Mvc.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Optimization.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Razor.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.WebPages.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.WebPages.Deployment.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\System.Web.WebPages.Razor.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Antlr3.Runtime.pdb
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Newtonsoft.Json.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\EntityFramework.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\EntityFramework.SqlServer.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AspNet.Identity.Core.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Facebook.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Cookies.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.OAuth.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Google.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Twitter.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\obj\Debug\WebsiteBanSach.csprojResolveAssemblyReference.cache
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\obj\Debug\WebsiteBanSach.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\obj\Debug\WebsiteBanSach.pdb
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\PagedList.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\PagedList.Mvc.dll
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\PagedList.xml
+E:\laptrinhweb\project\asp.net mvc\WebsiteBanSach\WebsiteBanSach\bin\PagedList.Mvc.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\ApplicationInsights.config
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\roslyn\csc.exe
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\roslyn\System.Collections.Immutable.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\roslyn\System.Reflection.Metadata.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\roslyn\vbc.exe
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\roslyn\VBCSCompiler.exe
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\roslyn\VBCSCompiler.exe.config
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\WebsiteBanSach.dll.config
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\WebsiteBanSach.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\WebsiteBanSach.pdb
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Antlr3.Runtime.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\EntityFramework.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\EntityFramework.SqlServer.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.Agent.Intercept.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.DependencyCollector.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.Web.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.WindowsServer.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.ApplicationInsights.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AspNet.Identity.Core.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Cookies.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Facebook.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Google.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.OAuth.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Twitter.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Web.Infrastructure.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Newtonsoft.Json.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Owin.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\PagedList.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\PagedList.Mvc.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Helpers.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Mvc.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Optimization.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Razor.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.WebPages.Deployment.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.WebPages.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.WebPages.Razor.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\WebGrease.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.DependencyCollector.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.Web.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AI.WindowsServer.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.ApplicationInsights.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\PagedList.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\PagedList.Mvc.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Helpers.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Mvc.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Optimization.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.Razor.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.WebPages.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.WebPages.Deployment.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\System.Web.WebPages.Razor.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Antlr3.Runtime.pdb
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Newtonsoft.Json.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\EntityFramework.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\EntityFramework.SqlServer.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AspNet.Identity.Core.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Facebook.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Cookies.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.OAuth.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Google.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.Twitter.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\website\WebsiteBanSach\WebsiteBanSach\obj\Debug\WebsiteBanSach.csprojResolveAssemblyReference.cache
+E:\website\WebsiteBanSach\WebsiteBanSach\obj\Debug\WebsiteBanSach.csproj.CoreCompileInputs.cache
+E:\website\WebsiteBanSach\WebsiteBanSach\obj\Debug\WebsiteBanSach.csproj.CopyComplete
+E:\website\WebsiteBanSach\WebsiteBanSach\obj\Debug\WebsiteBanSach.dll
+E:\website\WebsiteBanSach\WebsiteBanSach\obj\Debug\WebsiteBanSach.pdb

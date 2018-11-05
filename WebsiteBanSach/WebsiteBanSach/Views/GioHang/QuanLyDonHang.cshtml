@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "QuanLyDonHang";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Quản lý đơn hàng</h2>
+@if (ViewBag.Thongbao != null)
+{
+    <div class="alert-success">
+        @ViewBag.Thongbao
+    </div>
+}
+<br />
+@using (Html.BeginForm("QuanLyDonHang", "GioHang", FormMethod.Get))
+{
+    <div class="col-md-4">
+        <input type="text" name="txtTimKiem" value="@ViewBag.tukhoa" placeholder="Mã đơn hàng..." />
+        <button type="submit" class="mainBtn">Search</button>
+    </div>
+}
+<br />
+<table class="table">
+    <tr>
+        <td>Mã đơn hàng</td>
+        <td>Đã thanh toán</td>
+        <td>Tình trạng giao hàng</td>
+        <td>Ngày đặt</td>
+        <td>Ngày giao</td>
+        <td>Khách hàng</td>
+        <td>Tùy chọn</td>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.MaDonHang</td>
+            <td>
+                @if (item.DaThanhToan == 0)
+                {
+                    <a>false</a>
+                }
+                else
+                {
+                    <a>true</a>
+                }
+            </td>
+            <td>
+                @if (item.TinhTrangGiaoHang == 0)
+                {
+                    <a>false</a>
+                }
+                else
+                {
+                    <a>true</a>
+                }
+            </td>
+            <td>@item.NgayDat.ToString(string.Format("dd/MM/yyyy"))</td>
+            <td>@item.NgayGiao.ToString(string.Format("dd/MM/yyyy"))</td>
+            @foreach(var kh in ViewBag.KhachHang)
+            {
+                if (kh.MaKH == item.MaKH)
+                {
+                    <td>@kh.TaiKhoan</td>
+                }
+            }
+            <td>
+                <a href="/Giohang/DetailDonHang?id=@item.MaDonHang">Chi tiết</a>
+                <a href="/Giohang/EditDonHang?id=@item.MaDonHang">Sửa</a>
+                <a href="/Giohang/DeleteDonHang?id=@item.MaDonHang">Xóa</a>
+            </td>
+        </tr>
+    }
+</table>
+

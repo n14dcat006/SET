@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "QuanLyNXB";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Quản lý nhà xuất bản</h2>
+@if (ViewBag.Thongbao != null)
+{
+    <div class="alert-success">
+        @ViewBag.Thongbao
+    </div>
+}
+<h4><a href="/NhaXuatBan/CreateNXB">Thêm mới</a></h4><br />
+@using (Html.BeginForm("QuanLyNXB", "NhaXuatBan", FormMethod.Get))
+{
+    <div class="col-md-4">
+        <input type="text" name="txtTimKiem" value="@ViewBag.tukhoa" placeholder="Tên NXB..." />
+        <button type="submit" class="mainBtn">Search</button>
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>Mã nhà xuất bản</th>
+        <th>Tên nhà xuất bản</th>
+        <th>Địa chỉ</th>
+        <th>Điện thoại</th>
+        <th>Tùy chọn</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaNXB</td>
+            <td>@item.TenNXB</td>
+            <td>@item.DiaChi</td>
+            <td>@item.DienThoai</td>
+            <td>
+                <a href="/NhaXuatBan/DeleteNXB?id=@item.MaNXB">Xóa</a>
+                <a href="/NhaXuatBan/EditNXB?id=@item.MaNXB">Sửa</a>
+            </td>
+        </tr>
+    }
+</table>
+

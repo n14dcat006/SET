@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "QuanLyTacGia";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Quản lý tác giả</h2>
+@if (ViewBag.Thongbao != null)
+{
+    <div class="alert-success">
+        @ViewBag.Thongbao
+    </div>
+}
+<h4><a href="/TacGia/CreateTacGia">Thêm mới</a></h4><br />
+@using (Html.BeginForm("QuanLyTacGia", "TacGia", FormMethod.Get))
+{
+    <div class="col-md-4">
+        <input type="text" name="txtTimKiem" value="@ViewBag.tukhoa" placeholder="Tên tác giả.." />
+        <button type="submit" class="mainBtn">Search</button>
+    </div>
+}
+<br />
+<table class="table">
+    <tr>
+        <th>Mã tác giả</th>
+        <th>Tên tác giả</th>
+        <th>Tùy chọn</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaTacGia</td>
+            <td>@item.TenTacGia</td>
+            <td>
+                <a href="/TacGia/DeleteTacGia?id=@item.MaTacGia">Xóa</a>
+                <a href="/TacGia/EditTacGia?id=@item.MaTacGia">Sửa</a>
+            </td>
+        </tr>
+    }
+</table>
+

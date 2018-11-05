@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<head>
+    @*file css*@
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 section-title">
+                    <h2>Sách mới</h2>
+                </div> <!-- /.section -->
+            </div> <!-- /.row -->
+            <div class="row">
+                @foreach (var sach in ViewBag.sachmoi)
+                {
+                    <div class="col-md-3">
+                        <div class="product-item-2">
+                            <div class="product-thumb">
+                                <img src="@sach.AnhBia" alt="Product Title">
+                            </div> <!-- /.product-thumb -->
+                            <a href="/Sach/DetailSach?id=@sach.MaSach">
+                                <div class="product-content overlay">
+                                    <h5>@sach.TenSach</h5>
+                                    @foreach (var tacgia in ViewBag.tacgia)
+        {
+            if (tacgia.MaTacGia == sach.MaTacGia)
+            {
+                            <span class="price">@tacgia.TenTacGia</span>
+}
+}
+                                    <span class="price">@sach.GiaBan</span>
+                                </div> <!-- /.product-content -->
+                            </a>
+                        </div> <!-- /.product-item -->
+                    </div> <!-- /.col-md-3 -->
+                }
+            </div><!--.row-->
+        </div> <!-- /.container -->
+    </div> <!-- /.content-section -->
+
+    <div class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 section-title">
+                    <h2>Sách top</h2>
+                </div> <!-- /.section -->
+            </div> <!-- /.row -->
+            <div class="row">
+                @foreach (var sach in ViewBag.sachtop)
+                {
+                    <div class="col-md-3">
+                        <div class="product-item-2">
+                            <div class="product-thumb">
+                                <img src="@sach.AnhBia" alt="Product Title">
+                            </div> <!-- /.product-thumb -->
+                            <a href="/Sach/DetailSach?id=@sach.MaSach">
+                                <div class="product-content overlay">
+                                    <h5>@sach.TenSach</h5>
+                                    @foreach (var tacgia in ViewBag.tacgia)
+        {
+            if (tacgia.MaTacGia == sach.MaTacGia)
+            {
+                            <span class="price">@tacgia.TenTacGia</span>
+}
+}
+                                    <span class="price">@sach.GiaBan</span>
+                                </div> <!-- /.product-content -->
+                            </a>
+                                
+</div> <!-- /.product-item -->
+                    </div> <!-- /.col-md-3 -->
+                }
+            </div><!--.row-->
+        </div> <!-- /.container -->
+    </div> <!-- /.content-section -->
+
+</body>
+
+
+
+
+

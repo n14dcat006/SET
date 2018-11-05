@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "CreateSach";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+<head>
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    @*Thêm thuộc tính cho form để upload hình ảnh*@'
+    @using (Html.BeginForm("CreateSach", "Sach", FormMethod.Post, new { @enctype = "multipart/form-data", @class="contactform" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="content-section">
+            <div class="container">
+                <div class="col-md-6">
+                    <form name="contactform">
+                        <h3 class="widget-title">Sách</h3>
+                        <p>
+                            <input name="TenSach" type="text" placeholder="Tên sách" required />
+                        </p>
+                        <p>
+                            <input name="GiaBan" type="text" pattern="[0-9].{0,9}" placeholder="Giá bán (đơn vị VND)" required>
+                        </p>
+                        <p>
+                            <textarea name="MoTa" placeholder="Mô tả sách" cols="100" rows="10" required></textarea>
+                        </p>
+                        <p>
+                            <input name="SoLuongTon" type="text" pattern="[0-9].{1,9}" placeholder="Số lượng tồn" required />
+                        </p>
+                        <p class="form-group">
+                            <label >Ảnh bìa</label>
+                            <input type="file" name="fileupload" />
+                            @ViewBag.Thongbao
+                        </p>
+                        <p class="form-group">
+                            <label >Ngày cập nhật</label>
+                            <input type="date" name="NgayCapNhat" required />
+                        </p>
+                        <p class="form-group">
+                            <label class="col-md-3">Nhà xuất bản</label>
+                            @Html.DropDownList("MaNXB")
+                        </p>
+                        <p class="form-group">
+                            <label class="col-md-3">Chủ đề</label>
+                            @Html.DropDownList("MaChuDe")
+                        </p>
+                        <p class="form-group">
+                            <label class="col-md-3">Tác giả</label>
+                            @Html.DropDownList("MaTacGia");
+                        </p>
+                        <input type="submit" class="mainBtn" id="submit" value="Tạo mới">
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</body>

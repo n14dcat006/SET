@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "QuanLySach";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<h2>Quản lý sách</h2>
+@if (ViewBag.Thongbao != null)
+{
+    <div class="alert-success">
+        @ViewBag.Thongbao 
+    </div>
+}
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length)
+    {
+
+            @input
+    }
+    else
+    {
+            @input.Substring(0,length)<text>...</text>
+    }
+}
+<h4><a href="/Sach/CreateSach">Thêm mới</a></h4><br />
+@using (Html.BeginForm("QuanLySach", "Sach", FormMethod.Get))
+{
+    <div class="col-md-4">
+        <input type="text" name="txtTimKiem" value="@ViewBag.tukhoa" placeholder="Search tên sách" />
+        <button type="submit" class="mainBtn">Search</button>
+    </div>
+}
+<br />
+<table class="table">
+    <tr>
+        <th>Mã sách</th>
+        <th>Tên sách</th>
+        <th style="width:300px">Mô tả</th>
+        <th>Giá bán</th>
+        <th>Ảnh bìa</th>
+        <th>Ngày cập nhật</th>
+        <th>Số lượng tồn</th>
+        <th>Chủ đề</th>
+        <th>Nhà xuất bản</th>
+        <th>Tác giả</th>
+        <th>Tùy chọn</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.MaSach</td>
+            <td>@item.TenSach</td>
+            <td style="width:300px">
+                @Truncate(item.MoTa,100)
+            </td>
+            <td>@item.GiaBan</td>
+            <td>
+                <img src="@item.AnhBia" class="image-detail" />
+            </td>
+            <td>@item.NgayCapNhat.ToString(string.Format("dd/MM/yyyy"))</td>
+            <td>@item.SoLuongTon</td>
+            @foreach(var cd in ViewBag.chude)
+            {
+                if (cd.MaChuDe == item.MaChuDe)
+                {
+                    <td>@cd.TenChuDe</td>
+                }
+            }
+            @foreach(var nxb in ViewBag.nxb)
+            {
+                if (nxb.MaNXB == item.MaNXB)
+                {
+                    <td>@nxb.TenNXB</td>
+                }
+            }
+            @foreach(var tg in ViewBag.tacgia)
+            {
+                if (tg.MaTacGia == item.MaTacGia)
+                {
+                    <td>@tg.TenTacGia</td>
+                }
+            }
+            <td>
+                <a href="/Sach/DeleteSach?id=@item.MaSach">Xóa</a>
+                <a href="/Sach/EditSach?id=@item.MaSach">Sửa</a>
+                <a href="/Sach/DetailSach?id=@item.MaSach">Chi tiết</a>
+            </td>
+        </tr>
+    }
+</table>

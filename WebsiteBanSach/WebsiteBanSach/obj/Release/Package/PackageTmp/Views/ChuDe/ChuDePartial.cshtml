@@ -1,0 +1,8 @@
+﻿
+<a href="/ChuDe/SachTheoChuDe">Chủ đề</a><a data-toggle="dropdown"><b class="caret"></b></a>
+<ul class="dropdown-menu">
+    @foreach (var item in Model)
+    {
+        <li><a href="/ChuDe/SachThuocChuDe?id=@item.MaChuDe">@item.TenChuDe</a></li>
+    }
+</ul>

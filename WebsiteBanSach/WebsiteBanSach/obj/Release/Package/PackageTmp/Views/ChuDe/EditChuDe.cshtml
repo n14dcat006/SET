@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "EditChuDe";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@model WebsiteBanSach.Models.ChuDe
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+    <script src="~/Scripts/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+    @using (Html.BeginForm("EditChuDe", "ChuDe", new { id = Model.MaChuDe }, FormMethod.Post, new { @class = "contactform" }))
+    {
+        @Html.ValidationSummary(true)
+        <div class="content-section">
+            <div class="container">
+                <div class="col-md-6">
+                    <h3 class="widget-title">Chủ đề</h3>
+                    <br />
+                    <form class="contactform">
+                        <h5><label>Tên chủ đề</label></h5>
+                        <div class="html-input">
+                            @Html.TextBoxFor(model => model.TenChuDe, new { required = "true" })
+                        </div>
+                        <input type="submit" class="mainBtn" value="Lưu">
+                    </form>
+                </div>
+            </div>
+        </div> <!-- /.content-section -->
+    }
+</body>
+

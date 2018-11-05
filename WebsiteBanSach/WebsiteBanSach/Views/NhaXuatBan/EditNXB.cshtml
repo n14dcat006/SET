@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "EditNXB";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@model WebsiteBanSach.Models.NhaXuatBan
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+    <script src="~/Scripts/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+    @using (Html.BeginForm("EditNXB", "NhaXuatBan", new { id = Model.MaNXB }, FormMethod.Post, new { @class = "contactform" }))
+    {
+        @Html.ValidationSummary(true)
+        <div class="content-section">
+            <div class="container">
+                <div class="col-md-6">
+                    <h3 class="widget-title">Nhà xuất bản</h3>
+                    <br />
+                    <form class="contactform">
+                        <h5><label>Tên nhà xuất bản</label></h5>
+                        <p>
+                            @Html.TextBoxFor(model => model.TenNXB, new { required = "true" })
+                        </p>
+                        <h5><label>Địa chỉ</label></h5>
+                        <p>
+                            @Html.TextBoxFor(model => model.DiaChi, new { required = "true" })
+                        </p>
+                        <h5><label>Điện thoại</label></h5>
+                        <p>
+                            @Html.TextBoxFor(model => model.DienThoai, new { required = "true" })
+                        </p>
+                        <input type="submit" class="mainBtn" value="Lưu">
+                    </form>
+                </div>
+            </div>
+        </div> <!-- /.content-section -->
+    }
+</body>
+

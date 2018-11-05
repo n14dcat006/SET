@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "TongHopSach";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<head>
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="content-section">
+        <div class="container">
+            <div class="row">
+                @foreach (var sach in ViewBag.moi)
+                {
+                    <div class="col-md-3">
+                        <div class="product-item-2">
+                            <div class="product-thumb">
+                                <img src="@sach.AnhBia" alt="Product Title">
+                            </div> <!-- /.product-thumb -->
+                            <div class="product-content overlay">
+                                <h5><a href="/Sach/DetailSach?id=@sach.MaSach">@sach.TenSach</a></h5>
+                                @foreach (var tacgia in ViewBag.tacgia)
+                                {
+                                    if (tacgia.MaTacGia == sach.MaTacGia)
+                                    {
+                                        <span class="price">@tacgia.TenTacGia</span>
+                                    }
+                                }
+                                <span class="price">@sach.GiaBan</span>
+                            </div> <!-- /.product-content -->
+                        </div> <!-- /.product-item -->
+                    </div> <!-- /.col-md-3 -->
+                }
+            </div><!--.row-->
+        </div> <!-- /.container -->
+    </div> <!-- /.content-section -->
+</body>

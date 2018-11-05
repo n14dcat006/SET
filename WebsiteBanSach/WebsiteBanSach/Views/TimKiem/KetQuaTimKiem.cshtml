@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "KetQuaTimKiem";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+</head>
+<body>
+    @using PagedList.Mvc
+    @using WebsiteBanSach.Models
+    @model PagedList.PagedList<Sach>
+
+    <div class="content-section">
+        <h2> Kết quả tìm kiếm </h2>
+        @ViewBag.ThongBao
+        <div class="container">
+            <div class="row">
+                @foreach (var sach in Model)
+                {
+                    <div class="col-md-3">
+                        <div class="product-item-2">
+                            <div class="product-thumb">
+                                <img src="@sach.AnhBia" alt="Product Title">
+                            </div> <!-- /.product-thumb -->
+                            <div class="product-content overlay">
+                                <h5><a href="/Sach/DetailSach?id=@sach.MaSach">@sach.TenSach</a></h5>
+                                @foreach (var tacgia in ViewBag.tacgia)
+                                {
+                                    if (tacgia.MaTacGia == sach.MaTacGia)
+                                    {
+                                        <span class="price">@tacgia.TenTacGia</span>
+                                    }
+                                }
+                                <span class="price">@sach.GiaBan</span>
+                            </div> <!-- /.product-content -->
+                        </div> <!-- /.product-item -->
+                        <div style="text-align:center">
+                            @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaSach = sach.MaSach, @strURL = "/TimKiem/KetQuaTimKiem" }))
+                            {
+                                <input type="submit" value="Mua hàng" class="btn detail_button">
+                            }
+                            <br />
+                        </div>
+
+                    </div> <!-- /.col-md-3 -->
+                }
+            </div>
+        </div>
+    </div>
+    @* tạo liên kết các trang *@
+    Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+    <div class="menuTrang">
+        @Html.PagedListPager(Model,page=>Url.Action("KetQuaTimKiem",new { page=page, @txtTimKiem=ViewBag.TuKhoa}))
+    </div>
+</body>

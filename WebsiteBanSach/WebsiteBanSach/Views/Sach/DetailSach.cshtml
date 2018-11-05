@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "DetailSach";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@{ 
+    var item = Model;
+}
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="@item.AnhBia" style="width:150px;height:270px" />
+                </div>
+                <div class="col-md-10">
+                    <p><h3 style="color:#691e1e">@item.TenSach</h3></p>
+                    <p>Tác giả: <span style="font-weight:bold"><a href="~/TacGia/SachThuocTacGia?id=@item.MaTacGia">@ViewBag.TenTacGia</a></span></p>
+                    
+                    <p>Giá bán: <span>@item.GiaBan</span><span> VNĐ</span></p>
+                    <p>Số lượng: <span>@item.SoLuongTon</span></p>
+                    <p class="detail_button">
+                        <a href="/Giohang/ThemGioHang?iMaSach=@Model.MaSach&&strURL=@Request.Url.ToString()">Mua hàng</a>
+                    </p>                    
+                </div>
+            </div>
+            <div class="col-md-12">
+                @item.MoTa
+            </div>
+        </div>
+    </div>
+</body>

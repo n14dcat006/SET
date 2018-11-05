@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "SachThuocChuDe";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h2>@ViewBag.chude.TenChuDe</h2>
+    @if (ViewBag.Thongbao != null)
+    {
+        <div class="alert-success">
+            @ViewBag.Thongbao
+        </div>
+    }
+    <div class="content-section">
+        <div class="container">
+            <div class="row">
+                @foreach (var sach in ViewBag.listSach)
+            {
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-item-2">
+                            <div class="product-thumb">
+                                <img src="@sach.AnhBia" alt="Product Title">
+                            </div> <!-- /.product-thumb -->
+                            <div class="product-content overlay">
+                                <h5><a href="/Sach/DetailSach?id=@sach.MaSach">@sach.TenSach</a></h5>
+                                <span class="price">@sach.GiaBan</span>
+                            </div> <!-- /.product-content -->
+                        </div> <!-- /.product-item -->
+                    </div> <!-- /.col-md-3 -->
+                }
+            </div>
+        </div>
+    </div>
+</body>

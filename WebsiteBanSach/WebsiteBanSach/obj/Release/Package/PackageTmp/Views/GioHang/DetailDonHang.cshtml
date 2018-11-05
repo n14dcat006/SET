@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "DetailDonHang";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Chi tiết đơn hàng</h2>
+<table class="table">
+    <tr>
+        <td>Mã đơn hàng: @ViewBag.MaDonHang</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Mã sách</td>
+        <td>Tên sách</td>
+        <td>Số lượng</td>
+        <td>Đơn giá</td>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.MaSach</td>
+            @foreach(var tensach in ViewBag.TenSach)
+            {
+                if (tensach.MaSach == item.MaSach)
+                {
+                    <td>@tensach.TenSach</td>
+                }
+            }
+            <td>@item.SoLuong</td>
+            <td>@item.DonGia</td>
+        </tr>
+    }
+</table>
+

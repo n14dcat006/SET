@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "EditAdmin";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@model WebsiteBanSach.Models.Admin
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+    <script src="~/Scripts/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+    @using (Html.BeginForm("EditAdmin", "Admin",new { id = Model.MaAdmin }, FormMethod.Post, new { @class = "contactform" }))
+    {
+        @Html.ValidationSummary(true)
+        <div class="content-section">
+            <div class="container">
+                <div class="col-md-6">
+                    <h3 class="widget-title">Chỉnh sửa Admin</h3>
+                    <br />
+                    <form class="contactform">
+                        <h5><label>Tên tài khoản</label></h5>
+                        <p>
+                            @Html.TextBoxFor(model => model.TaiKhoanAdmin,new { @required = "true", placeholder="Tên tài khoản" });
+                        </p>
+                        <h5><label>Họ tên</label></h5>
+                        <p>
+                            @Html.TextBoxFor(model => model.HoTenAdmin, new { @required = "true", placeholder = "Họ tên" });
+                        </p>
+                        <h5><label>Mật khẩu</label></h5>
+                        <p>
+                            @Html.PasswordFor(model => model.MatKhau, new { @required = "true", placeholder = "Mật khẩu" });
+                        </p>
+                        <h5><label>Nhập lại mật khẩu</label></h5>
+                        <p>
+                            <input name="NhapLaiMatKhau" type="password" required />
+                        </p>
+                        @if (ViewBag.Thongbao != null)
+                        {
+                            <div class="alert-success">
+                                @ViewBag.Thongbao
+                            </div>
+                        }
+                        <input type="submit" class="mainBtn" value="Lưu">
+                    </form>
+                </div>
+            </div>
+        </div> <!-- /.content-section -->
+    }
+</body>
+

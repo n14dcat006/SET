@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "EditSach";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@model WebsiteBanSach.Models.Sach
+<head>
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+    @using (Html.BeginForm("EditSach", "Sach", new { id = Model.MaSach }, FormMethod.Post, new { @enctype = "multipart/form-data", @class="contactform" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="content-section">
+            <div class="container">
+                <div class="col-md-6">
+                    <h3 class="widget-title">Sách</h3>
+                    <form name="contactform">
+                        <p>
+                            <label>Tên sách</label>
+                            @Html.TextBoxFor(model => model.TenSach, new { required = "true"})
+                        </p>
+                        <p>
+                            <label>Giá bán</label>
+                            @Html.TextBoxFor(model => model.GiaBan, new { required = "true"})
+                        </p>
+                        <p>
+                            <label>Mô tả</label>
+                            @Html.TextAreaFor(model => model.MoTa, new { required = "true" });
+                        </p>
+                        <p>
+                            <label>Số lượng tồn</label>
+                            @Html.TextBoxFor(model => model.SoLuongTon, new { required = "true" })
+                        </p>
+                        <p class="form-group">
+                            <label>Ảnh bìa</label><br />
+                            <img src="@Model.AnhBia" style="width:50px;height:75px" />
+                            <input type="file" name="fileupload" />
+                            @ViewBag.Thongbao
+                        </p>
+                        <p>
+                            <label >Ngày cập nhật</label>
+                            <input type="date" name="NgayCapNhat" value="@ViewBag.ngay" required />
+                        </p>
+                        <p class="form-group">
+                            <label class="col-md-3">Chủ đề</label>
+                            @Html.DropDownList("MaChuDe")
+                        </p>
+                        <p class="form-group">
+                            <label class="col-md-3">Tác giả</label>
+                            @Html.DropDownList("MaTacGia")
+                        </p>
+                        <p class="form-group">
+                            <label class="col-md-3">Nhà xuất bản</label>
+                            @Html.DropDownList("MaNXB")
+                        </p>
+                        <input type="submit" class="mainBtn" value="Lưu">
+                    </form>
+                </div>
+            </div>
+        </div> <!-- /.content-section -->
+    }
+</body>

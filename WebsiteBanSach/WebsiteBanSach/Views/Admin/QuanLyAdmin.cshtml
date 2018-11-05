@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "QuanLyAdmin";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@if (ViewBag.Thongbao != null)
+{
+    <div class="alert-success">
+        @ViewBag.Thongbao
+    </div>
+}
+<h2>Quản lý Admin</h2>
+<h4><a href="/Admin/CreateAdmin">Thêm mới</a></h4><br />
+@using (Html.BeginForm("QuanLyAdmin", "Admin", FormMethod.Get))
+{
+    <div class="col-md-4">
+        <input type="text" name="txtTimKiem" value="@ViewBag.tukhoa" placeholder="Tài khoản Admin" />
+        <button type="submit" class="mainBtn">Search</button>
+    </div>
+}
+<br />
+<table class="table">
+    <tr>
+        <th>
+            Mã Admin
+        </th>
+        <th>
+            Tên tài khoản
+        </th>
+        <th>
+            Họ tên
+        </th>
+        <th>
+            Tùy chọn
+        </th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                @item.MaAdmin
+            </td>
+            <td>
+                @item.TaiKhoanAdmin
+            </td>
+            <td>
+                @item.HoTenAdmin
+            </td>
+            <td>
+                <a href="/Admin/DeleteAdmin?id=@item.TaiKhoanAdmin">Xóa</a>
+                <a href="/Admin/EditAdmin?id=@item.TaiKhoanAdmin">Sửa</a>
+            </td>
+        </tr>
+    }
+</table>
+

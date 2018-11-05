@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "DangNhapAdmin";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<head>
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    @if (ViewBag.Thongbao != null)
+    {
+        <div class="alert-success">
+            @ViewBag.Thongbao
+        </div>
+    }
+    <div class="content-section">
+        <div class="container">
+            <div class="col-md-6">
+                <form class="contactform" action="/Admin/DangNhapAdmin" method="post">
+                    <h2>Đăng nhập Admin</h2>
+                    <p>
+                        <input type="text" name="TaiKhoanAdmin" placeholder="Tên tài khoản admin" required />
+                    </p>
+                    <p>
+                        <input type="password" name="MatKhau" placeholder="Mật khẩu" required />
+                    </p>
+                    @if (ViewBag.Thongbao1 != null)
+                    {
+                        <div class="alert-success">
+                            @ViewBag.Thongbao1
+                        </div>
+                    }
+                    <input type="submit" class="mainBtn" value="Đăng nhập" />
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

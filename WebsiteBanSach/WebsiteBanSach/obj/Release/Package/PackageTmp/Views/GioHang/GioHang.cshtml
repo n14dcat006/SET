@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2 style="text-align:center">GIỎ HÀNG</h2>
+<table class="table-responsive table" >
+    <tr style="text-align:center;font-weight:bold">
+        <td>
+            Mã sách
+        </td>
+        <td>
+            Ảnh bìa
+        </td>
+        <td>
+            Tên sách
+        </td>
+        <td>
+            Số lượng
+        </td>
+        <td>
+            Đơn giá
+        </td>
+        <td>
+            Thành tiền
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr style="text-align:center">
+            <td>
+                @item.iMaSach
+            </td>
+            <td>
+                <img src="@item.sAnhBia" class="image-detail" />
+            </td>
+            <td>
+                @item.sTenSach
+            </td>
+            @using (Html.BeginForm("UpdateGioHang", "GioHang", new { @id = item.iMaSach }))
+            {
+                <td>
+                    <input type="number" pattern="[0-9]" min="1" name="SoLuong" value="@item.iSoLuong" required />
+                </td>
+                <td>
+                    @string.Format("{0:0,0}", item.dDonGia)
+                </td>
+                <td>
+                    @string.Format("{0:0,0}", item.dThanhTien)
+                </td>
+                <td>
+                    <a href="/Sach/DetailSach?id=@item.iMaSach">Chi tiết</a>
+                </td>
+                <td>
+                    <a href="/GioHang/DeleteGioHang?id=@item.iMaSach">Xóa</a>
+                </td>
+                <td>
+                    <button type="submit">Cập nhật</button>
+                </td>
+            }
+        </tr>
+    }
+    <tr style="font-weight:bold; text-align:right">
+        <td colspan="4">
+            Số lượng sách: @ViewBag.TongSoLuong
+        </td>
+        <td colspan="5">
+            Tổng tiền: @String.Format("{0:0,0}", ViewBag.TongTien) VNĐ
+        </td>
+    </tr>
+    <tr>
+        <td colspan="9" style="text-align:center">
+            <a href="/Giohang/DatHang" class="mainBtn">Đặt hàng</a>
+        </td>
+    </tr>
+    <tr style="font-weight:bold;text-align:right">
+        <td colspan="9">
+            <a href="/GioHang/DeleteAllGioHang" style="text-decoration:none">Xóa giỏ hàng</a>
+        </td>
+    </tr>
+</table> 

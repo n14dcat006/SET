@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "EditDonHang";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@model WebsiteBanSach.Models.DonHang
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm("EditDonHang", "GioHang", new { id = Model.MaDonHang }, FormMethod.Post, new { @class = "contactform" }))
+    {
+        @Html.ValidationSummary(true)
+        <div class="content-section">
+            <div class="container">
+                <div class="col-md-6">
+                    <h3 class="widget-title">Đơn hàng</h3>
+                    <br />
+                    <form class="contactform">
+                        <h5><label>Mã đơn hàng</label></h5>
+                        <p>
+                            @Html.TextBoxFor(model=>model.MaDonHang,new { required = "true" })
+                        </p>
+                        <h5><label>Đã thanh toán</label></h5>
+                        <p>
+                            @Html.TextBoxFor(model => model.DaThanhToan, new { required = "true", placeholder="true=1, false=0" })
+                        </p>
+                        <h5><label>Tình trạng giao hàng</label></h5>
+                        <p>
+                            @Html.TextBoxFor(model => model.TinhTrangGiaoHang, new { required = "true", placeholder = "true=1, false=0" })
+                        </p>
+                        <h5><label>Ngày đặt</label></h5>
+                        <p>
+                            <input type="date" name="NgayDat" value="@ViewBag.ngaydat" required />
+                        </p>
+                        <h5><label>Ngày giao</label></h5>
+                        <p>
+                            <input type="date" name="NgayGiao" value="@ViewBag.ngaygiao" required />
+                        </p>
+                        <h5><label>Mã khách hàng</label></h5>
+                        <p>
+                            @Html.TextBoxFor(model => model.MaKH, new { required = "true" })
+                        </p>
+                        <input type="submit" class="mainBtn" value="Lưu" />
+                    </form>
+                </div>
+            </div>
+        </div> <!-- /.content-section -->
+    }
+</body>
+

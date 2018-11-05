@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "QuanLyChuDe";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Quản lý chủ đề</h2>
+@if (ViewBag.Thongbao != null)
+{
+    <div class="alert-success">
+        @ViewBag.Thongbao
+    </div>
+}
+<h4><a href="/ChuDe/CreateChuDe">Thêm mới</a></h4><br />
+@using (Html.BeginForm("QuanLyChuDe", "ChuDe", FormMethod.Get))
+{
+    <div class="col-md-4">
+        <input type="text" name="txtTimKiem" value="@ViewBag.tukhoa" placeholder="Chủ đề..." />
+        <button type="submit" class="mainBtn">Search</button>
+    </div>
+}
+<br />
+<table class="table">
+    <tr>
+        <th>Mã chủ đề</th>
+        <th>Tên chủ đề</th>
+        <th>Tùy chọn</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.MaChuDe</td>
+            <td>@item.TenChuDe</td>
+            <td>
+                <a href="/ChuDe/DeleteChuDe?id=@item.MaChuDe">Xóa</a>
+                <a href="/ChuDe/EditChuDe?id=@item.MaChuDe">Sửa</a>
+            </td>
+        </tr>
+    }
+</table>
+
+

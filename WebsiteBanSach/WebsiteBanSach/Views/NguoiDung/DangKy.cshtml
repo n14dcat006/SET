@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+    <script src="~/Scripts/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+    <div class="content-section">
+        <div class="container">
+            <div class="col-md-6">
+                <form class="contactform" action="/NguoiDung/DangKy" method="post">
+                    <h3>Đăng ký</h3>
+                    <p>
+                        <input type="text" name="HoTen" placeholder="Họ tên khách hàng" required />
+                    </p>
+                    <p>
+                        <input type="text" name="TaiKhoan" placeholder="Tên tài khoản" required />
+                    </p>
+                    <p>
+                        <input type="password" name="MatKhau" placeholder="Mật khẩu" required />
+                    </p>
+                    <p>
+                        <input type="password" name="NhapLaiMatKhau" placeholder="Nhập lại mật khẩu" required />
+                    </p>
+                    @if (ViewBag.Thongbao != null)
+                    {
+                        <div class="alert-success">
+                            @ViewBag.Thongbao
+                        </div>
+                    }
+                    <p><input type="email" name="Email" placeholder="Email" required /></p>
+                    <p>
+                        <input type="text" name="DiaChi" placeholder="Địa chỉ" required />
+                    </p>
+                    <p>
+                        <input type="text" name="DienThoai" placeholder="Điện thoại" pattern="[0-9].{1,13}" required />
+                    </p>
+                    <p>
+                        <label>Giới tính</label>
+                        <select name="GioiTinh">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Ngày sinh</label>
+                        <input type="date" name="NgaySinh" required />
+                    </p>
+                    <input type="submit" class="mainBtn" value="Đăng ký">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

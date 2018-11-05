@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "CreateAdmin";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/bootstrap.css">
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+    <script src="~/Scripts/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+    <div class="content-section">
+        <div class="container">
+            <div class="col-md-6">
+                <h3 class="widget-title">Admin</h3>
+                <br />
+                <form class="contactform" action="/Admin/CreateAdmin" method="post">
+                    <p>
+                        <input name="TaiKhoanAdmin" type="text" placeholder="Tên tài khoản" required>
+                    </p>
+                    <p>
+                        <input name="HoTenAdmin" type="text" placeholder="Họ tên Admin" required />
+                    </p>
+                    <p>
+                        <input name="MatKhau" type="password" placeholder="Mật khẩu" required />
+                    </p>
+                    <p>
+                        <input name="NhapLaiMatKhau" type="password" placeholder="Nhập lại mật khẩu" required />
+                    </p>
+                    @if (ViewBag.Thongbao != null)
+                    {
+                        <div class="alert-success">
+                            @ViewBag.Thongbao
+                        </div>
+                    }
+                    <input type="submit" class="mainBtn" value="Tạo mới" />
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
