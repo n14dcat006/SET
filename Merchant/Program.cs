@@ -94,8 +94,9 @@ namespace Merchant
                 if (c.VerifyCertificate(caCertificate,customerCertificate) == false)
                 {
                     Console.WriteLine("verify purchase request certificate false");
-                    s = initiateResponse.getTransID() + "-" + c.Random(2)+ "-" + 3 + "-" + "xac thuc that bai";
-                    c.send(s, ref socket);
+                    s = initiateResponse.getTransID() + ":" + c.Random(2)+ ":" + 3 + ":" + "xac thuc that bai";
+                    PurchaseResponse purchaseResponse = new PurchaseResponse(s);
+                    c.send(purchaseResponse.ToMessage(), ref socket);
                 }
                 else
                 {
@@ -103,8 +104,9 @@ namespace Merchant
                     if (purchaseRequest.verify() == false)//xác thực purchase request
                     {
                         Console.WriteLine("verify purchase request false");
-                        s = initiateResponse.getTransID() + "-" + purchaseRequest.getRRPID() + "-" + 3 + "-" + "xac thuc that bai";
-                        c.send(s, ref socket);
+                        s = initiateResponse.getTransID() + ":" + purchaseRequest.getRRPID() + ":" + 3 + ":" + "xac thuc that bai";
+                        PurchaseResponse purchaseResponse = new PurchaseResponse(s);
+                        c.send(purchaseResponse.ToMessage(), ref socket);
                     }
                     else
                     {

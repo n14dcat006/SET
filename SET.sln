@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acquirer", "Acquirer\Acquir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteBanSach", "..\..\..\..\website\WebsiteBanSach\WebsiteBanSach\WebsiteBanSach.csproj", "{BA8FECFC-E4B1-4425-8508-A838ED9D5A3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteThanhToan", "WebsiteThanhToan\WebsiteThanhToan.csproj", "{FD3FA2AB-DBFD-4EAB-9A06-1A4269C5F7F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{BA8FECFC-E4B1-4425-8508-A838ED9D5A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA8FECFC-E4B1-4425-8508-A838ED9D5A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA8FECFC-E4B1-4425-8508-A838ED9D5A3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD3FA2AB-DBFD-4EAB-9A06-1A4269C5F7F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD3FA2AB-DBFD-4EAB-9A06-1A4269C5F7F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD3FA2AB-DBFD-4EAB-9A06-1A4269C5F7F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD3FA2AB-DBFD-4EAB-9A06-1A4269C5F7F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

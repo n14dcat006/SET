@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -14,7 +15,6 @@ namespace WebsiteBanSach.Controllers
     public class GioHangController : Controller
     {
         // GET: GioHang
-        static Socket client;
         static DonHang dh;
         static double tongTien=0;
         static int tongSoLuong=0;
@@ -182,8 +182,11 @@ namespace WebsiteBanSach.Controllers
                 ctdh.DonGia = (decimal)item.dDonGia;
                 data.ChiTietDonHangs.InsertOnSubmit(ctdh);
             }
-            data.SubmitChanges();
-            return RedirectToAction("ThanhToan", "GioHang");
+            data.SubmitChanges();            
+            string customer = dh.MaKH + "-" + kh.TaiKhoan + "-" + dh.MaDonHang + "-" + tongSoLuong + "-" + tongTien;
+            Session["GioHang"] = null;
+            dh = null;
+            return Redirect($"https://www.thanhtoan.baongoc.com:1223/Home/Index?oi={customer}");
         }
         [HttpGet]
         public ActionResult ThanhToan(string thongbao)
@@ -254,6 +257,38 @@ namespace WebsiteBanSach.Controllers
             UpdateModel(dh);
             data.SubmitChanges();
             return RedirectToAction("QuanLyDonHang");
+        }
+        public ActionResult HuyDonHang(int maDH)
+        {
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "localhost";
+            builder.UserID = "sa";
+            builder.Password = "123456";
+            builder.InitialCatalog = "QuanLyBanSach";
+            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            {
+                connection.Open();
+                string sql;
+                StringBuilder sb = new StringBuilder();
+
+                sb.Append("DELETE FROM ChiTietDonHang WHERE MaDonHang = @maDH;");
+                sql = sb.ToString();
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@maDH", maDH);
+                    int rowsAffected = command.ExecuteNonQuery();
+                }
+                sb.Clear();
+                sb.Append("DELETE FROM DonHang WHERE MaDonHang = @maDH;");
+                sql = sb.ToString();
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@maDH", maDH);
+                    int rowsAffected = command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+            return View();
         }
         #endregion
         private static readonly string[] VietNamChar = new string[]

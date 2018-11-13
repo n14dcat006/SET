@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/MyContent.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    @{
+        if (ViewBag.thongbao != null)
+        {
+            <br />
+            <h4 style="color:white;background:#e60101"><label>@ViewBag.thongbao</label></h4>
+        }
+    }
+            <div class="content-section">
+                <div class="container">
+                    <div class="col-md-6">
+                        <form name="contactform">
+                            <h3 class="widget-title">THÔNG TIN ĐƠN HÀNG</h3>
+                            <p>
+                                <h5>Khách hàng: @ViewBag.TaiKhoan</h5>
+                            </p>
+                            <p>
+                                <h5>Số sản phẩm: @ViewBag.SoLuong</h5>
+                            </p>
+                            <p>
+                                <h5>Số tiền: @ViewBag.SoTien</h5>
+                            </p>
+                            <br />
+                        </form>
+                    </div>
+                </div>
+            </div>
+    @*Thêm thuộc tính cho form để upload hình ảnh*@'
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @enctype = "multipart/form-data", @class = "contactform" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="content-section">
+            <div class="container">
+                <div class="col-md-6">
+                    <form name="contactform">
+                        <h3 class="widget-title">THÔNG TIN TÀI KHOẢN</h3>
+                        <p>
+                            <input name="CardNumber" type="text" placeholder="Card Nummber" required />
+                        </p>
+                        <p>
+                            <input name="CVV" type="text" placeholder="CVV" required>
+                        </p>
+                        <p>
+                            <input name="DateValid" type="text" placeholder="DateValid" required>
+                        </p>
+                        <p class="form-group">
+                            <h5><label>Private Key</label></h5>
+                            <input type="file" name="PrivateKey" required />
+                        </p>
+                        <p class="form-group">
+                            <h5><label>Certificate</label></h5>
+                            <input type="file" name="Certificate" required />
+                        </p>
+                        <input type="submit" class="mainBtn" id="submit" value="Thanh Toán">
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

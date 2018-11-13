@@ -107,126 +107,131 @@ namespace Issuer
                             ForwardAuthorizationResponse forwardAuthorizationResponse = new ForwardAuthorizationResponse(s, issuerPrivateKey, c.ByteArrayToString(issuerCertificate.GetRawCertData()));
                             c.send(forwardAuthorizationResponse.ToMessage(), ref socket);
                         }
-
-                        //ghi PI vào log Isuuer
-                        sb.Clear();
-                        sb.Append("INSERT LogIssuer (TransID, CardNumber, Money, Paid) ");
-                        sb.Append("VALUES (@trans, @cardid, @money, @paid);");
-                        sql = sb.ToString();
-                        using (SqlCommand command = new SqlCommand(sql, connection))
-                        {
-                            command.Parameters.AddWithValue("@trans", transID);
-                            command.Parameters.AddWithValue("@cardid", cardNumber);
-                            command.Parameters.AddWithValue("@money", tien);
-                            command.Parameters.AddWithValue("@paid", 0);
-                            int rowsAffected = command.ExecuteNonQuery();
-                        }
-                        connection.Close();
-                    }
-                    
-                    //gửi forward response
-                    string issuerCert = c.ByteArrayToString(issuerCertificate.GetRawCertData());
-                    ForwardAuthorizationResponse authorizationResponse = new ForwardAuthorizationResponse(transID, 1, cardNumber, issuerPrivateKey, issuerCert);
-                    c.send(authorizationResponse.ToMessage(), ref socket);
-
-                    //nhận capture request từ gateway
-                    receiveMessage = c.receive(ref socket);
-                    string[] splitCapture = receiveMessage.Split('-');
-                    gatewayCertificate = new X509Certificate2(c.StringToByteArray(splitCapture[6]));
-                    if (c.VerifyCertificate(caCertificate,gatewayCertificate) == false)
-                    {
-                        Console.WriteLine("verify capture request certificate from gateway false");
-                        string s = "ERROR" + ":" + "3" + ":" + "xac thuc that bai";
-                        s = s + "-" + c.Sign(issuerPrivateKey, s) + "-" + c.ByteArrayToString(issuerCertificate.GetRawCertData());
-                        c.send(s, ref socket);
-                    }
-                    else
-                    {
-                        Console.WriteLine("verify capture request certificate from gateway true");
-                        string captureRequest = getToken(receiveMessage);//thông tin tài khoản customer
-                        if (captureRequest == null)
-                        {
-                            string message1= "ERROR" + ":" + "3" + ":" + "xac thuc that bai";
-                            message1 = message1 + "-" + c.Sign(issuerPrivateKey, message1) + "-" + c.ByteArrayToString(issuerCertificate.GetRawCertData());
-                            c.send(message1, ref socket);
-                        }
                         else
                         {
-                            string customerCardNumber;
-                            long soTien;
-                            string[] splitCaptureRequest = captureRequest.Split(':');
-                            transID = splitCaptureRequest[0];
-                            customerCardNumber = splitCaptureRequest[1];
-                            soTien = Convert.ToInt64(splitCaptureRequest[2]);
-
-                            //nhập dữ liệu thanh toán vào sql server
-                            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+                            //ghi PI vào log Isuuer
+                            sb.Clear();
+                            sb.Append("INSERT LogIssuer (TransID, CardNumber, Money, Paid) ");
+                            sb.Append("VALUES (@trans, @cardid, @money, @paid);");
+                            sql = sb.ToString();
+                            using (SqlCommand command = new SqlCommand(sql, connection))
                             {
-                                connection.Open();
-                                string sql;
-                                StringBuilder sb = new StringBuilder();
-                                sb.Clear();
-                                sb.Append("UPDATE LogIssuer SET Paid = @paid WHERE TransID = @id");
-                                sql = sb.ToString();
-                                using (SqlCommand command = new SqlCommand(sql, connection))
-                                {
-                                    command.Parameters.AddWithValue("@id", transID);
-                                    command.Parameters.AddWithValue("@paid", 1);
-                                    int rowsAffected = command.ExecuteNonQuery();
-                                }
-                                long tienBanDau = 0;
-                                sql = "SELECT CardNumber, UsedMoney FROM Issuer;";
-                                using (SqlCommand command = new SqlCommand(sql, connection))
-                                {
-                                    using (SqlDataReader sqlReader = command.ExecuteReader())
-                                    {
-                                        while (sqlReader.Read())
-                                        {
-                                            if (cardNumber.Equals(sqlReader.GetString(0)) == true)
-                                            {
-                                                tienBanDau = sqlReader.GetInt64(1);
-                                            }
+                                command.Parameters.AddWithValue("@trans", transID);
+                                command.Parameters.AddWithValue("@cardid", cardNumber);
+                                command.Parameters.AddWithValue("@money", tien);
+                                command.Parameters.AddWithValue("@paid", 0);
+                                int rowsAffected = command.ExecuteNonQuery();
+                            }
+                            //gửi forward response
+                            string issuerCert = c.ByteArrayToString(issuerCertificate.GetRawCertData());
+                            ForwardAuthorizationResponse authorizationResponse = new ForwardAuthorizationResponse(transID, 1, cardNumber, issuerPrivateKey, issuerCert);
+                            c.send(authorizationResponse.ToMessage(), ref socket);
 
+                            //nhận capture request từ gateway
+                            receiveMessage = c.receive(ref socket);
+                            string[] splitCapture = receiveMessage.Split('-');
+                            gatewayCertificate = new X509Certificate2(c.StringToByteArray(splitCapture[6]));
+                            if (c.VerifyCertificate(caCertificate, gatewayCertificate) == false)
+                            {
+                                Console.WriteLine("verify capture request certificate from gateway false");
+                                string s = "ERROR" + ":" + "3" + ":" + "xac thuc that bai";
+                                s = s + "-" + c.Sign(issuerPrivateKey, s) + "-" + c.ByteArrayToString(issuerCertificate.GetRawCertData());
+                                c.send(s, ref socket);
+                            }
+                            else
+                            {
+                                Console.WriteLine("verify capture request certificate from gateway true");
+                                string captureRequest = getToken(receiveMessage);//thông tin tài khoản customer
+                                if (captureRequest == null)
+                                {
+                                    string message1 = "ERROR" + ":" + "3" + ":" + "xac thuc that bai";
+                                    message1 = message1 + "-" + c.Sign(issuerPrivateKey, message1) + "-" + c.ByteArrayToString(issuerCertificate.GetRawCertData());
+                                    c.send(message1, ref socket);
+                                }
+                                else
+                                {
+                                    string customerCardNumber;
+                                    long soTien;
+                                    string[] splitCaptureRequest = captureRequest.Split(':');
+                                    transID = splitCaptureRequest[0];
+                                    customerCardNumber = splitCaptureRequest[1];
+                                    soTien = Convert.ToInt64(splitCaptureRequest[2]);
+
+                                    //nhập dữ liệu thanh toán vào sql server
+                                    using (SqlConnection connection1 = new SqlConnection(builder.ConnectionString))
+                                    {
+                                        connection1.Open();
+                                        string sql1;
+                                        StringBuilder sb1 = new StringBuilder();
+                                        sb1.Clear();
+                                        sb1.Append("UPDATE LogIssuer SET Paid = @paid WHERE TransID = @id");
+                                        sql1 = sb1.ToString();
+                                        using (SqlCommand command = new SqlCommand(sql1, connection1))
+                                        {
+                                            command.Parameters.AddWithValue("@id", transID);
+                                            command.Parameters.AddWithValue("@paid", 1);
+                                            int rowsAffected = command.ExecuteNonQuery();
+                                        }
+                                        long tienBanDau = 0;
+                                        sql1 = "SELECT CardNumber, UsedMoney FROM Issuer;";
+                                        using (SqlCommand command = new SqlCommand(sql1, connection1))
+                                        {
+                                            using (SqlDataReader sqlReader = command.ExecuteReader())
+                                            {
+                                                while (sqlReader.Read())
+                                                {
+                                                    if (cardNumber.Equals(sqlReader.GetString(0)) == true)
+                                                    {
+                                                        tienBanDau = sqlReader.GetInt64(1);
+                                                    }
+
+                                                }
+                                            }
+                                        }
+                                        sb1.Clear();
+                                        sb1.Append("UPDATE Issuer SET UsedMoney = @tien WHERE CardNumber = @id");
+                                        sql1 = sb1.ToString();
+                                        using (SqlCommand command = new SqlCommand(sql1, connection1))
+                                        {
+                                            command.Parameters.AddWithValue("@tien", soTien + tienBanDau);
+                                            command.Parameters.AddWithValue("@id", customerCardNumber);
+                                            int rowsAffected = command.ExecuteNonQuery();
+                                        }
+                                        connection1.Close();
+                                        connection.Close();
+                                    }
+
+                                    //send message to acquirer                            
+                                    sendMessage = splitCapture[0] + "-" + splitCapture[1] + "-" + splitCapture[2] + "-" + splitCapture[6];
+                                    IPEndPoint iep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 1237);
+                                    Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                                    client.Connect(iep);
+                                    c.send(sendMessage, ref client);
+
+                                    //nhận message từ acquirer
+                                    receiveMessage = c.receive(ref client);
+                                    string[] splitAcquirer = receiveMessage.Split('-');
+                                    X509Certificate2 acquirerCertificate = new X509Certificate2(c.StringToByteArray(splitAcquirer[2]));
+                                    if (c.VerifyCertificate(caCertificate, acquirerCertificate) == true)
+                                    {
+                                        Console.WriteLine("verify capture response certificate from acquirer true");
+                                        string acquirerPublicKey = acquirerCertificate.GetRSAPublicKey().ToXmlString(false);
+                                        if (c.Verify(acquirerPublicKey, splitAcquirer[1], splitAcquirer[0]) == true)
+                                        {
+                                            Console.WriteLine("verify capture response from acquirer true");
+                                            message = splitAcquirer[0];
+                                            c.send(message + "-" + c.Sign(issuerPrivateKey, message) + "-" + issuerCert, ref socket);
                                         }
                                     }
-                                }
-                                sb.Clear();
-                                sb.Append("UPDATE Issuer SET UsedMoney = @tien WHERE CardNumber = @id");
-                                sql = sb.ToString();
-                                using (SqlCommand command = new SqlCommand(sql, connection))
-                                {
-                                    command.Parameters.AddWithValue("@tien", soTien + tienBanDau);
-                                    command.Parameters.AddWithValue("@id", customerCardNumber);
-                                    int rowsAffected = command.ExecuteNonQuery();
-                                }
-                                connection.Close();
-                            }
-
-                            //send message to acquirer                            
-                            sendMessage = splitCapture[0] + "-" + splitCapture[1] + "-" + splitCapture[2] + "-" + splitCapture[6];
-                            IPEndPoint iep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 1237);
-                            Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                            client.Connect(iep);
-                            c.send(sendMessage, ref client);
-
-                            //nhận message từ acquirer
-                            receiveMessage = c.receive(ref client);
-                            string[] splitAcquirer = receiveMessage.Split('-');
-                            X509Certificate2 acquirerCertificate = new X509Certificate2(c.StringToByteArray(splitAcquirer[2]));
-                            if (c.VerifyCertificate(caCertificate,acquirerCertificate) == true)
-                            {
-                                Console.WriteLine("verify capture response certificate from acquirer true");
-                                string acquirerPublicKey = acquirerCertificate.GetRSAPublicKey().ToXmlString(false);
-                                if(c.Verify(acquirerPublicKey, splitAcquirer[1], splitAcquirer[0]) == true)
-                                {
-                                    Console.WriteLine("verify capture response from acquirer true");
-                                    message = splitAcquirer[0];
-                                    c.send(message + "-" + c.Sign(issuerPrivateKey, message) + "-" + issuerCert, ref socket);
+                                    //client.Close();
                                 }
                             }
-                            //client.Close();
-                        }                        
-                    }                    
+                        }
+
+                        
+                    }
+
+                                       
                 }                
             }
             

@@ -1,0 +1,7 @@
+E:\thuong mai dien tu\project\SET\SET\Message\bin\Release\Message.exe.config
+E:\thuong mai dien tu\project\SET\SET\Message\bin\Release\Message.exe
+E:\thuong mai dien tu\project\SET\SET\Message\bin\Release\Message.pdb
+E:\thuong mai dien tu\project\SET\SET\Message\obj\Release\Message.csprojResolveAssemblyReference.cache
+E:\thuong mai dien tu\project\SET\SET\Message\obj\Release\Message.csproj.CoreCompileInputs.cache
+E:\thuong mai dien tu\project\SET\SET\Message\obj\Release\Message.exe
+E:\thuong mai dien tu\project\SET\SET\Message\obj\Release\Message.pdb
