@@ -51,6 +51,7 @@ E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\roslyn\vbc.rsp
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\roslyn\VBCSCompiler.exe
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\roslyn\VBCSCompiler.exe.config
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\Antlr3.Runtime.dll
+E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\Message.exe
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\Microsoft.AI.Agent.Intercept.dll
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\Microsoft.AI.DependencyCollector.dll
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -69,6 +70,8 @@ E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\System.Web.WebPages.D
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\System.Web.WebPages.dll
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\System.Web.WebPages.Razor.dll
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\WebGrease.dll
+E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\Message.pdb
+E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\Message.exe.config
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\System.Web.Helpers.xml
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\System.Web.Mvc.xml
@@ -89,6 +92,3 @@ E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\obj\Debug\WebsiteThanhToa
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\obj\Debug\WebsiteThanhToan.csproj.CopyComplete
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\obj\Debug\WebsiteThanhToan.dll
 E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\obj\Debug\WebsiteThanhToan.pdb
-E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\Message.exe
-E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\Message.pdb
-E:\thuong mai dien tu\project\SET\SET\WebsiteThanhToan\bin\Message.exe.config

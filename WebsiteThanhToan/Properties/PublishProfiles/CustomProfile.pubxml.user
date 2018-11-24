@@ -9,6 +9,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <_PublishTargetUrl>D:\ThanhToan</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="App.config">
+      <publishTime>11/17/2018 15:48:30</publishTime>
+    </File>
     <File Include="ApplicationInsights.config">
       <publishTime>11/06/2018 14:58:04</publishTime>
     </File>
@@ -229,10 +232,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/17/2013 17:03:52</publishTime>
     </File>
     <File Include="bin/WebsiteThanhToan.dll">
-      <publishTime>11/07/2018 16:01:50</publishTime>
+      <publishTime>11/19/2018 20:59:29</publishTime>
     </File>
     <File Include="bin/WebsiteThanhToan.pdb">
-      <publishTime>11/07/2018 16:01:50</publishTime>
+      <publishTime>11/19/2018 20:59:29</publishTime>
     </File>
     <File Include="Content/animate.css">
       <publishTime>11/06/2018 15:00:20</publishTime>
@@ -334,10 +337,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/06/2018 14:57:03</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>11/07/2018 15:03:50</publishTime>
+      <publishTime>11/19/2018 20:57:05</publishTime>
     </File>
     <File Include="Views/Home/KetQua.cshtml">
-      <publishTime>11/07/2018 15:55:14</publishTime>
+      <publishTime>11/19/2018 20:57:38</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>11/06/2018 14:57:03</publishTime>

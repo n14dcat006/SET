@@ -186,6 +186,7 @@ namespace WebsiteBanSach.Controllers
             string customer = dh.MaKH + "-" + kh.TaiKhoan + "-" + dh.MaDonHang + "-" + tongSoLuong + "-" + tongTien;
             Session["GioHang"] = null;
             dh = null;
+            
             return Redirect($"https://www.thanhtoan.baongoc.com:1223/Home/Index?oi={customer}");
         }
         [HttpGet]

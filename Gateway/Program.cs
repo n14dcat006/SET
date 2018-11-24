@@ -44,7 +44,7 @@ namespace Gateway
             if (c.VerifyCertificate(caCertificate,customerCertificate) == false || c.VerifyCertificate(caCertificate,merchantCertificate) == false)
             {
                 Console.WriteLine("verify authorization request certificate false");
-                string message = "ERROR" + "-" + 3 + "-" + "xac thuc that bai";
+                string message = "ERROR" + "-" + 4 + "-" + "xac thuc that bai";
                 c.send(message, ref socket);
             }
             else
@@ -53,7 +53,7 @@ namespace Gateway
                 if (authorizationRequest.Verify(gatewayPrivateKey) == false)
                 {
                     Console.WriteLine("verify authorization request false");
-                    string s = "ERROR" + "-" + 3 + "-" + "xac thuc that bai";
+                    string s = "ERROR" + "-" + 4 + "-" + "xac thuc that bai";
                     c.send(s, ref socket);
                 }
                 else
@@ -115,7 +115,7 @@ namespace Gateway
                                 if (c.VerifyCertificate(caCertificate, merchantCertificate) == false)
                                 {
                                     Console.WriteLine("verify capture request certificate false");
-                                    string message1 = "ERROR" + "-" + 3 + "-" + "xac thuc that bai";
+                                    string message1 = "ERROR" + "-" + 4 + "-" + "xac thuc that bai";
                                     c.send(message1, ref socket);
                                 }
                                 else
@@ -125,7 +125,7 @@ namespace Gateway
                                     if (captureRequest.Verify() == false)
                                     {
                                         Console.WriteLine("verify capture request false");
-                                        message = "ERROR" + "-" + 3 + "-" + "xac thuc that bai";
+                                        message = "ERROR" + "-" + 4 + "-" + "xac thuc that bai";
                                         c.send(message, ref socket);
                                     }
                                     else

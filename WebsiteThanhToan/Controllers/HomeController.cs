@@ -18,9 +18,10 @@ namespace WebsiteThanhToan.Controllers
         static string cardNumber, CVV, dateValid;
         static int maDH, maKH;
         static long soTien;
-        static string customerPrivateKey;
+        static string customerPrivateKey = System.IO.File.ReadAllText("d:/file/customerPrivateKey.xml");
         static string merchantPublicKey, gatewayPublicKey;
-        static X509Certificate2 customerCertificate, merchantCertificate, gatewayCertificate;
+        static X509Certificate2 customerCertificate = new X509Certificate2("d:/file/customer.crt");
+        static X509Certificate2 merchantCertificate, gatewayCertificate;
         static X509Certificate2 caCertificate = new X509Certificate2("d:/file/ca.crt");
         public ActionResult Index(string oi)
         {
@@ -42,14 +43,15 @@ namespace WebsiteThanhToan.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(FormCollection collection, HttpPostedFileBase PrivateKey, HttpPostedFileBase Certificate)
+        public ActionResult Index(FormCollection collection)
         {
             bool verify;
             cardNumber = collection["CardNumber"];
             CVV = collection["CVV"];
             dateValid = collection["DateValid"];
-            //lấy dữ liệu
             Common c = new Common();
+            //lấy dữ liệu
+            /*            
             System.IO.Stream s=PrivateKey.InputStream;
             byte[] buffer = new byte[1024];
             using (MemoryStream ms = new MemoryStream())
@@ -73,7 +75,7 @@ namespace WebsiteThanhToan.Controllers
                 }
                 byte[] certificateByte = ms.ToArray();
                 customerCertificate = new X509Certificate2(certificateByte);
-            }
+            }*/
             //khởi tạo kết nối đến customer
             IPEndPoint iep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 1234);
             Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -149,6 +151,14 @@ namespace WebsiteThanhToan.Controllers
                             else if (splitPurchase[2].CompareTo("2") == 0)
                             {
                                 ViewBag.thongbao = "Thông tin tài khoản không đúng";
+                                ViewBag.TaiKhoan = tenKH;
+                                ViewBag.SoLuong = soLuong;
+                                ViewBag.SoTien = soTien;
+                                return this.View();
+                            }
+                            else if (splitPurchase[2].CompareTo("3") == 0)
+                            {
+                                ViewBag.thongbao = "Số tiền thanh toán vượt quá hạn mức của thẻ";
                                 ViewBag.TaiKhoan = tenKH;
                                 ViewBag.SoLuong = soLuong;
                                 ViewBag.SoTien = soTien;

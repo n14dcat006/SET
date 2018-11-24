@@ -42,7 +42,7 @@ namespace Acquirer
             if (c.VerifyCertificate(caCertificate,gatewayCertificate) == false)
             {
                 Console.WriteLine("verify capture request certificate from issuer false");
-                string s = "ERROR" + ":" + "3" + ":" + "xac thuc that bai";
+                string s = "ERROR" + ":" + "4" + ":" + "xac thuc that bai";
                 s = s + "-" + c.Sign(privateKeyAcquirer, s) + "-" + c.ByteArrayToString(acquirerCertificate.GetRawCertData());
                 c.send(s, ref socket);
             }
@@ -53,7 +53,7 @@ namespace Acquirer
                 if (captureRequest == null)
                 {
 
-                    string s = "ERROR" + ":" + "3" + ":" + "xac thuc that bai";
+                    string s = "ERROR" + ":" + "4" + ":" + "xac thuc that bai";
                     s = s + "-" + c.Sign(privateKeyAcquirer, s) + "-" + c.ByteArrayToString(acquirerCertificate.GetRawCertData());
                     c.send(s, ref socket);
                 }
